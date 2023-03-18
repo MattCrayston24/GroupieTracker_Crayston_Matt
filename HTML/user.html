@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Created</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+          <a href="#">Mon logo</a>
+        </div>
+        <div class="navbar-menu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#">Accueil</a></li>
+            <li class="nav-item"><a href="/user">Produits</a></li>
+            <li class="nav-item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    <div>
+
+    </div>
+    <h1>User Created</h1>
+    <p>Gender: {{.Gender}}</p>
+    <p>Name: {{.Name.Title}} {{.Name.First}} {{.Name.Last}}</p>
+    <p>Location: {{.Location.Street.Number}} {{.Location.Street.Name}}, {{.Location.City}}, {{.Location.State}}, {{.Location.Country}} {{if .Location.Postcode}}- {{.Location.Postcode}}{{end}}</p>
+    <p>Coordinates: {{.Location.Coordinates.Latitude}}, {{.Location.Coordinates.Longitude}}</p>
+    <p>Timezone: {{.Location.Timezone.Offset}}, {{.Location.Timezone.Description}}</p>
+    <p>Email: {{.Email}}</p>
+    <p>Username: {{.Login.Username}}</p>
+    <p>Password: {{.Login.Password}}</p>
+    <p>D.O.B: {{.Dob.Date}}, {{.Dob.Age}}</p>
+    <p>Registration Date: {{.Registered.Date}}, {{.Registered.Age}} years ago</p>
+    <p>Phone: {{.Phone}}</p>
+    <p>Cell: {{.Cell}}</p>
+    <p>ID: {{.Id.Name}}-{{.Id.Value}}</p>
+    <img src="{{.Picture.Large}}" alt="{{.Name.First}} {{.Name.Last}} profile picture">
+    <a href="/">Return to home page</a>
+</body>
+</html>
