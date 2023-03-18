@@ -16,7 +16,7 @@
           <ul class="navbar-nav">
             <li class="nav-item"><a href="/">Accueil</a></li>
             <li class="nav-item"><a href="/user">Règles</a></li>
-            <li class="nav-item"><a href="#">Contact</a></li>
+            <li class="nav-item"><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="navbar-toggle">
@@ -29,7 +29,7 @@
           <p class="title">RandomUserGame</p>
           <p class="title">___________________</p>
           <p class="descrip">RUG, est un site sur lequel vous pouvez créer un utilisateur
-            avec des caractéristiques aléatoire...</p>
+            avec des caractéristiques uniques à lui...</p>
       </div>
        <div class="back-ctn">
         <div class="back">
@@ -50,27 +50,6 @@
         <p class="namee">Email: {{.Email}}</p> 
         <p class="namee">Téléphone: {{.Phone}}</p>
     </div>
-    <footer class="footer">
-      <div class="footer-header">
-        <h3>Contacter RandomUserGame</h3>
-        <button class="arrow-btn"><i class="fa fa-angle-down"></i></button>
-      </div>
-      <div class="footer-content">
-        <p>Adresse : 123 Rue de la Chance, 75000 Paris</p>
-        <p>Téléphone : 01 23 45 67 89</p>
-        <p>Email : contact@randomusergame.com</p>
-      </div>
-    </footer>
-    
-    <script>
-      const arrowBtn = document.querySelector('.arrow-btn');
-      const footerContent = document.querySelector('.footer-content');
-    
-      arrowBtn.addEventListener('click', () => {
-        footerContent.classList.toggle('show');
-        arrowBtn.classList.toggle('rotate');
-      });
-    </script>
     <div class="back2">
         <form method="POST">
             <label for="name">Prénom:</label>

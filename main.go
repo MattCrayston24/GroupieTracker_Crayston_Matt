@@ -74,6 +74,10 @@ func user(w http.ResponseWriter, r *http.Request) {
 	tmpl2 := template.Must(template.ParseFiles("HTML/user.html"))
 	tmpl2.Execute(w, nil)
 }
+func contact(w http.ResponseWriter, r *http.Request) {
+	tmpl3 := template.Must(template.ParseFiles("HTML/contact.html"))
+	tmpl3.Execute(w, nil)
+}
 
 var newName string
 
@@ -129,5 +133,6 @@ func main() {
 	http.Handle("/CSS/", http.StripPrefix("/CSS/", fs))
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/user", user)
+	http.HandleFunc("/contact", contact)
 	http.ListenAndServe(":8080", nil)
 }
