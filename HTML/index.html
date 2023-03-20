@@ -31,7 +31,8 @@
           <p class="descrip">RUG, est un site sur lequel vous pouvez créer un utilisateur
             avec des caractéristiques uniques à lui...</p>
       </div>
-       <div class="back-ctn">
+    <div class="big">
+      <div class="back-ctn">
         <div class="back">
           <h1>Créer un nouvel utilisateur</h1>
           <form method="POST">
@@ -43,24 +44,36 @@
               <button type="submit">Créer</button>
           </form>
       </div>
-       </div>
-    <div class="user">
-        <p class="name">{{.Name.Title}} {{.Name.First}} {{.Name.Last}}</p>
-        <img class="img" src="{{.Picture.Large}}" alt="Photo de l'utilisateur">   
-        <p class="namee">Email: {{.Email}}</p> 
-        <p class="namee">Téléphone: {{.Phone}}</p>
-    </div>
-    <div class="back2">
-        <form method="POST">
-            <label for="name">Prénom:</label>
-            <input type="text" id="name" name="name">
-            <br>
-            <button type="submit">Valider</button>
-                <h1>{{.Result.Name.First}} {{.Result.Name.Last}}</h1>
-                {{if .UserName}} 
-                  <p>Nom d'utilisateur: {{.UserName}}</p>
-                {{end}}
-        </form>
+      <div class="user">
+          <p class="name">{{.Name.Title}} {{.Name.First}} {{.Name.Last}}</p>
+          <a href="/infos">
+            <img url-de-la-page-cibleclass="img" src="{{.Picture.Large}}" alt="Photo de l'utilisateur">
+          </a>   
+          <p class="namee">Email: {{.Email}}</p> 
+          <p class="namee">Téléphone: {{.Phone}}</p>
+      </div>
+      <div class="back2">
+          <form method="POST">
+              <label for="name">Prénom:</label>
+              <input type="text" id="name" name="name">
+              <br>
+              <button type="submit">Valider</button>
+                  <h1>{{.Result.Name.First}} {{.Result.Name.Last}}</h1>
+                  {{if .UserName}} 
+                    <p>Nom d'utilisateur: {{.UserName}}</p>
+                  {{end}}
+          </form>
+      </div>
+      <footer>
+        <div class="container">
+          <p>&copy; 2023 Votre entreprise. Tous droits réservés.</p>
+          <ul>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Conditions générales de vente</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
 
 

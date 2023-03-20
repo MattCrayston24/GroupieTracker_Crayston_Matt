@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomUser</title>
+    <link rel="stylesheet" href="../CSS/style2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+          <a href="#">RUG - RandomUserGame</a>
+        </div>
+        <div class="navbar-menu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="/">Accueil</a></li>
+            <li class="nav-item"><a href="/user">Règles</a></li>
+            <li class="nav-item"><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    </nav>
+    <div class="back">
+        <h1>Last User</h1>
+        <u classl>
+        <li>Gender: {{.Gender}}</li>
+        <li>Email: {{.Email}}</li>
+        <li>Login:
+            <ul>
+            <li>UUID: {{.Login.Uuid}}</li>
+            <li>Username: {{.Login.Username}}</li>
+            <li>Password: {{.Login.Password}}</li>
+            <li>Salt: {{.Login.Salt}}</li>
+            <li>MD5: {{.Login.Md5}}</li>
+            <li>SHA1: {{.Login.Sha1}}</li>
+            <li>SHA256: {{.Login.Sha256}}</li>
+            </ul>
+        </li>
+        <li>DOB: {{.Dob.Date}} (age: {{.Dob.Age}})</li>
+        <li>Registered: {{.Registered.Date}} (age: {{.Registered.Age}})</li>
+        <li>Phone: {{.Phone}}</li>
+        <li>Cell: {{.Cell}}</li>
+        <li>ID: {{.Id.Name}} {{.Id.Value}}</li>
+        <li>Picture: <img src="{{.Picture.Large}}" alt="User Picture"></li>
+        <li>Nat: {{.Nat}}</li>
+        </ul>
+    </div>
+
+
+
+
+</body>
+</html>

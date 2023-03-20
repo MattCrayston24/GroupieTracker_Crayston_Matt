@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ff4b4b;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+  }
+  
+  .title{
+    display: flex;
+    font-size: 50px;
+    color: #ff4b4b;
+  }
+  
+  
+  .navbar {
+    border-bottom: 2px solid #ff4b4b;
+    display: flex;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202020;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .descrip{
+    margin-top: 70px;
+    display: flex;
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  .navbar-logo a {
+    color:#ff4b4b;
+    font-weight: bold;
+    font-size: 24px;
+    font-style: none;
+    text-decoration: none;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin-right: 100px;
+    transition: all 0.8s;
+  }
+  
+  .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+    
+    /* Styles pour le bouton de toggle */
+    .navbar-toggle {
+        display: none;
+        cursor: pointer;
+      }
+      
+      .navbar-toggle span {
+        display: block;
+        height: 3px;
+        width: 25px;
+        background-color: #fff;
+        margin-bottom: 5px;
+      }
+      
+      @media (max-width: 768px) {
+        .intro{
+          height: 500px;
+        }
+    
+        .navbar-menu {
+          display: none;
+        }
+      
+        .navbar-toggle {
+          display: block;
+        }
+      
+        .navbar-toggle.active + .navbar-menu {
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: #333;
+          padding: 20px;
+        }
+      
+        .nav-item {
+          display: block;
+          margin: 10px 0;
+        }
+  }
+
+.back{
+    height: 800px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+}
+  
+li{
+    font-size: 15px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.top {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}

@@ -66,6 +66,8 @@ type RandomUserResult struct {
 	Nat string `json:"nat"`
 }
 
+var lastUser RandomUserResult
+
 type RandomUserResponse struct {
 	Results []RandomUserResult `json:"results"`
 }
@@ -78,11 +80,19 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	tmpl3 := template.Must(template.ParseFiles("HTML/contact.html"))
 	tmpl3.Execute(w, nil)
 }
+func infos(w http.ResponseWriter, r *http.Request) {
+	tmpl4, err := template.ParseFiles("HTML/infos.html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	tmpl4.Execute(w, lastUser)
+}
 
 var newName string
 
 func handler(w http.ResponseWriter, r *http.Request) {
-
 	genre := r.FormValue("genre")
 	fmt.Printf("Le genre est %s\n", genre)
 
@@ -116,6 +126,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		result.Results[0].Name.First = newName
 	}
 
+	lastUser = result.Results[0]
+
 	tmpl, err := template.ParseFiles("HTML/index.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -123,9 +135,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	tmpl.Execute(w, result.Results[0])
-	return
-
-	http.ServeFile(w, r, "HTML/index.html")
 }
 
 func main() {
@@ -134,5 +143,6 @@ func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/user", user)
 	http.HandleFunc("/contact", contact)
+	http.HandleFunc("/infos", infos)
 	http.ListenAndServe(":8080", nil)
 }
